@@ -1,0 +1,533 @@
+/* ===================================================== */
+/* 🔹 RESET E CONFIGURAÇÕES GERAIS */
+/* ===================================================== */
+
+/* Remove estilos padrão do navegador e padroniza box model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Fonte fallback (caso Google Fonts falhe) */
+    font-family: Segoe UI, 'Tahoma', Geneva, Verdana, sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color: #f4f4f9;
+    /* fundo claro neutro */
+    color: #333;
+    /* contraste confortável */
+    line-height: 1.6;
+
+    /* Melhora renderização em mobile */
+    -webkit-font-smoothing: antialiased;
+
+    /* 🔧 MELHORIA: evita conteúdo escondido atrás da navbar fixa */
+    /*padding-top: 80px;*/
+}
+
+
+/* ===================================================== */
+/* 🔹 NAVBAR */
+/* ===================================================== */
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 5%;
+    background: #de0707;
+    /* cor principal */
+
+    color: white;
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+
+    z-index: 1000;
+}
+
+/* Logo */
+#navbar .logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+
+}
+
+/* Lista de navegação */
+#navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+/* Links */
+#navbar ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Hover */
+#navbar ul li a:hover {
+    color: #ff1100;
+}
+
+
+/* ===================================================== */
+/* 🔹 NAVBAR MOBILE (MENU COLAPSÁVEL) */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+
+    #navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* Menu escondido */
+    #navbar ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+
+        background: #de0707;
+
+        flex-direction: column;
+        align-items: center;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: 0.3s;
+    }
+
+    /* Menu aberto via JS */
+    #navbar ul.active {
+        max-height: 300px;
+        padding: 20px 0;
+    }
+
+    #navbar ul li {
+        margin: 10px 0;
+    }
+}
+
+
+/* ===================================================== */
+/* 🔹 HERO SECTION */
+/* ===================================================== */
+
+header {
+    height: 100vh;
+    width: 100%;
+
+    /* Overlay + imagem */
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: white;
+
+    /* Parallax (DESATIVADO no mobile depois) */
+    background-attachment: fixed;
+}
+
+/* Título */
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+/* Foto */
+.hero-text .foto-perfil {
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    margin: 0 auto 10px;
+
+    border: 4px solid #ffffff;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Botão */
+.hero-text button {
+    margin-top: 20px;
+    padding: 10px 25px;
+
+    background-color: #ff1100;
+    border: none;
+
+    color: white;
+    font-weight: bold;
+
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.hero-text button:hover {
+    background-color: #5b5959;
+    transform: translateY(-3px);
+}
+
+
+/* ===================================================== */
+/* 🔹 SEÇÕES GERAIS */
+/* ===================================================== */
+
+section {
+    padding: 100px 10% 60px;
+    text-align: center;
+}
+
+
+/* ===================================================== */
+/* 🔹 SKILLS */
+/* ===================================================== */
+
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    background: white;
+    padding: 30px;
+
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+
+    width: 280px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Ícones */
+.icon-box {
+    width: 100px;
+    height: 100px;
+
+    background-color: #f8f9fa;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border: 2px solid #eee;
+}
+
+.icone-grande {
+    font-size: 50px !important;
+    color: #2c3e50;
+}
+
+
+/* ===================================================== */
+/* 🔹 PROJETOS */
+/* ===================================================== */
+
+.projeto-grid {
+    display: grid;
+    padding: 30px 0;
+    /* Grelha flexível base */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* 🔧 CORREÇÃO: Força 3 colunas exatas apenas em ecrãs grandes (Desktop) */
+@media (min-width: 1024px) {
+    .projeto-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.projeto-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    /* REMOVA qualquer height fixo se existir e use min-height */
+    min-height: 365px;
+    /* Isso garante que o card tenha uma altura mínima robusta */
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-card:hover {
+    transform: translateY(-8px);
+}
+
+.projeto-capa {
+    height: 200px;
+    overflow: hidden;
+}
+
+.projeto-capa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#projetos {
+    padding-top: 120px;
+    /* aumenta espaço acima */
+}
+
+.projeto-info h3 {
+    margin-bottom: 10px;
+    /* espaço abaixo do título */
+}
+
+.projeto-info {
+    padding: 25px 17px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* 🔧 CORREÇÃO: Impede o botão vermelho de esticar */
+}
+
+.projeto-info p {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.tag {
+    /* Correção da etiqueta (tag) para evitar cortes no texto */
+    display: inline-block;
+    background: #ff1100;
+    color: white;
+    padding: 8px 20px;
+    /* Aumentamos o espaço interno (respiro) */
+    border-radius: 10px;
+    /* Visual mais quadrado e robusto, evita cortar as letras nas pontas */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1;
+    /* Garante que o texto fique centralizado verticalmente */
+    border: none;
+
+}
+
+
+/* ===================================================== */
+/* 🔹 CONTATO */
+/* ===================================================== */
+#contato p {
+    margin-bottom: 50px;
+    /* Afasta a frase "Interessado em Parcerias..." dos cards */
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.contato-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contato-card {
+    background: #ffffff;
+    width: 280px;
+
+    padding: 30px 20px;
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    text-align: center;
+    transition: 0.3s;
+}
+
+.contato-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Links */
+.contato-card a {
+    text-decoration: none;
+    color: inherit;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hover cores */
+.contato-card:hover .fa-linkedin {
+    color: #0077b5;
+}
+
+.contato-card:hover .fa-whatsapp {
+    color: #25d366;
+}
+
+.contato-card:hover .fa-envelope {
+    color: #ff1100;
+}
+
+
+/* ===================================================== */
+/* 🔹 TIPOGRAFIA */
+/* ===================================================== */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+.logo,
+#navbar ul li a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+
+/* ===================================================== */
+/* 🔹 FOOTER */
+/* ===================================================== */
+
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+
+/* ===================================================== */
+/* 📱 MOBILE OTIMIZADO */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+
+
+    /* Hero */
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    .hero-text .foto-perfil {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Corrige parallax */
+    header {
+        background-attachment: scroll;
+    }
+
+    /* Espaçamento */
+    section {
+        padding: 80px 5% 40px;
+        overflow: visible;
+
+    }
+
+    /* Ajuste para a seção Sobre Mim */
+    #sobre {
+        padding: 100px 15% 80px;
+        /* Aumentamos o respiro lateral para 15% */
+        text-align: center;
+        max-width: 600px;
+        /* Limita a largura para o texto não ficar esticado demais */
+        margin: 0 auto;
+        /* Centraliza a seção inteira na tela */
+    }
+
+    /* Espaçamento específico para os parágrafos do Sobre Mim */
+    #sobre p {
+        margin-top: 30px;
+        /* Distância entre o título "Sobre Mim" e o texto */
+        margin-bottom: 20px;
+        /* Distância entre os parágrafos */
+        line-height: 1.8;
+        /* Melhora a legibilidade do texto técnico */
+        /*text-align: justify;*/
+        /* Alinhamento justificado para parecer um documento de engenharia */
+        font-size: 1rem;
+    }
+
+    #projetos {
+        padding-bottom: 80px;
+    }
+
+    /* Cards fluidos */
+    .skill-card,
+    .contato-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* Botão menor */
+    .hero-text button {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        max-width: 200px;
+        width: 100%;
+    }
+}
+
+
+/* 📱 TELAS PEQUENAS */
+@media (max-width: 480px) {
+
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hero-text button {
+        width: 100%;
+    }
+}

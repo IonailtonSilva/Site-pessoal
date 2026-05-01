@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configuração de charset para suportar acentos -->
+    <meta charset="UTF-8">
+
+    <!-- Responsividade: essencial para mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página (REMOVIDO ~ inválido) -->
+    <title>Portfólio Profissional | Ionailton Silva</title>
+
+    <!-- Otimização de carregamento de fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Importação de fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Seu CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Ícones (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav id="navbar">
+        <div class="logo">Engenharia & Tecnologia</div>
+
+        <!-- Menu de navegação -->
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Meus Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= HEADER (HERO) ================= -->
+    <header id="home">
+        <div class="hero-text">
+
+            <!-- Imagem de perfil (IMPORTANTE: manter leve para mobile) -->
+            <img src="img/perfil.jpg" alt="Foto de Ionailton Silva" class="foto-perfil">
+
+            <h1>Olá, Sou Ionailton Silva</h1>
+
+            <!-- Descrição profissional -->
+            <p>
+                Graduando em Engenharia Mecânica | Técnico Mecânico | Projetista Mecânico | Desenvolvedor de Aplicações
+                para Indústria
+            </p>
+
+            <!-- Botão com navegação interna -->
+            <button onclick="window.location.href='#sobre'">
+                Saiba Mais
+            </button>
+        </div>
+    </header>
+
+    <!-- ================= SOBRE ================= -->
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+
+        <!-- Texto institucional -->
+        <p>
+            Com uma sólida trajetória de mais de <strong>20 anos</strong> no setor de manutenção industrial, minha
+            carreira é pautada pela entrega de soluções técnicas precisas. Atualmente, na reta final da graduação em
+            <strong>Bacharelado em Engenharia Mecânica pelo Instituto Federal da Paraiba</strong>,
+            busco integrar essa experiência prática a metodologias avançadas de simulação computacional (FEA/CFD).
+        </p>
+
+        <p>
+            Meu foco está na convergência entre a mecânica clássica e a <strong>Indústria 4.0</strong>, desenvolvendo
+            aplicações para diagnósticos inteligentes e projetos de energias renováveis.
+        </p>
+
+        <!-- Cards de habilidades -->
+        <div class="skills">
+
+            <div class="skill-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-helmet-safety icone-grande"></i>
+                </div>
+                <p>Engenharia, Projetos Industriais e Automotivos</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-code icone-grande"></i>
+                </div>
+                <p>Programação Aplicada Engenharia de Manutenção</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-solar-panel icone-grande"></i>
+                </div>
+                <p>Energias Renováveis e Projetos Sustentáveis</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= PROJETOS ================= -->
+    <section id="projetos">
+        <h2>Meus Projetos</h2>
+
+        <!-- Grid de projetos -->
+        <div class="projeto-grid">
+
+            <div class="projeto-card">
+                <div class="projeto-capa">
+                    <img src="img/Projetos-Foto-Voltaicos.jpg" alt="Projeto de carport solar">
+                </div>
+                <div class="projeto-info">
+                    <h3>Carport Solar</h3>
+                    <p>Design e Viabilidade Econômica de Estruturas para Mobilidade Sustentável.</p>
+                    <span class="tag">Engenharia</span>
+                </div>
+            </div>
+
+            <div class="projeto-card">
+                <div class="projeto-capa">
+                    <img src="img/analise-estrutural.jpg" alt="Simulação estrutural FEA">
+                </div>
+                <div class="projeto-info">
+                    <h3>Simulação FEA/CFD</h3>
+                    <p>Análise de Elementos Finitos e Fluidodinâmica.</p>
+                    <span class="tag">Simulação</span>
+                </div>
+            </div>
+
+            <div class="projeto-card">
+                <div class="projeto-capa">
+                    <img src="img/aplicacoes.png" alt="Aplicação de diagnóstico industrial">
+                </div>
+                <div class="projeto-info">
+                    <h3>DIT Maintenance</h3>
+                    <p>Aplicação de Diagnóstico Industrial com IA.</p>
+                    <span class="tag">Desenvolvimento</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= CONTATO ================= -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Interessado em Parcerias ou Consultoria Técnica? Entre em Contato!</p>
+
+        <div class="contato-container">
+
+            <!-- CORREÇÃO: fechamento da tag <a> -->
+            <div class="contato-card">
+                <a href="mailto:ionailtonsilva@gmail.com?subject=Contato%20via%20Portfólio&body=Olá%20Ionailton,">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-envelope icone-grande"></i>
+                    </div>
+                    <p>ionailtonsilva@gmail.com</p>
+                </a>
+            </div>
+
+            <div class="contato-card">
+                <a href="https://www.linkedin.com/in/ionailton-silva/" target="_blank">
+                    <div class="icon-box">
+                        <i class="fa-brands fa-linkedin icone-grande"></i>
+                    </div>
+                    <p>LinkedIn Profissional</p>
+                </a>
+            </div>
+
+            <div class="contato-card">
+                <a href="https://wa.me/5583988035469" target="_blank">
+                    <div class="icon-box">
+                        <i class="fa-brands fa-whatsapp icone-grande"></i>
+                    </div>
+                    <p>Conversar no WhatsApp</p>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= RODAPÉ ================= -->
+    <footer>
+        <p>&copy; 2026 Ionailton Silva - Engenharia & Tecnologia</p>
+    </footer>
+
+    <!-- Script JS -->
+    <script src="Javascript/javascript.js"></script>
+
+</body>
+
+</html>
