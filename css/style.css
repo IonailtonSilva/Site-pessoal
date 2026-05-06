@@ -3,25 +3,42 @@
 /* ===================================================== */
 
 /* Remove estilos padrão do navegador e padroniza box model */
+/* ===================================================== */
+/* GUIA RAPIDO DE EDICAO */
+/* ===================================================== */
+/* Altere os valores abaixo para controlar os espacamentos principais do site. */
+/* Ordem do padding: topo | laterais | base. */
+:root {
+    --section-padding-desktop: 70px 10% 45px; /* Espaco geral entre secoes no desktop */
+    --section-padding-mobile: 52px 5% 32px; /* Espaco geral entre secoes no celular/tablet */
+    --sobre-padding-mobile: 58px 10% 42px; /* Espaco especifico da secao "Sobre Mim" no mobile */
+    --projetos-padding-top-desktop: 75px; /* Espaco acima da secao "Meus Projetos" no desktop */
+    --projetos-padding-top-mobile: 58px; /* Espaco acima da secao "Meus Projetos" no mobile */
+    --projetos-padding-bottom-mobile: 42px; /* Espaco abaixo da secao "Meus Projetos" no mobile */
+    --skills-margin-top: 28px; /* Distancia entre o texto e os cards de habilidades */
+    --projeto-grid-padding: 22px 0; /* Respiro interno acima/abaixo do grid de projetos */
+    --contato-text-margin-bottom: 32px; /* Distancia entre a frase de contato e os cards */
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Remove margens padrao dos elementos */
+    padding: 0; /* Remove preenchimentos padrao dos elementos */
+    box-sizing: border-box; /* Faz width/height considerarem borda e padding */
 
     /* Fonte fallback (caso Google Fonts falhe) */
-    font-family: Segoe UI, 'Tahoma', Geneva, Verdana, sans-serif;
+    font-family: Segoe UI, 'Tahoma', Geneva, Verdana, sans-serif; /* Fonte reserva do site */
 }
 
 /* Corpo da página */
 body {
-    background-color: #f4f4f9;
+    background-color: #f4f4f9; /* Cor de fundo geral da pagina */
     /* fundo claro neutro */
-    color: #333;
+    color: #333; /* Cor principal dos textos */
     /* contraste confortável */
-    line-height: 1.6;
+    line-height: 1.6; /* Altura entre linhas dos textos */
 
     /* Melhora renderização em mobile */
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased; /* Suaviza a fonte em navegadores WebKit */
 
     /* 🔧 MELHORIA: evita conteúdo escondido atrás da navbar fixa */
     /*padding-top: 80px;*/
@@ -33,51 +50,51 @@ body {
 /* ===================================================== */
 
 #navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Organiza logo e menu lado a lado */
+    justify-content: space-between; /* Coloca logo na esquerda e menu na direita */
+    align-items: center; /* Centraliza os itens verticalmente */
 
-    padding: 1rem 5%;
-    background: #de0707;
+    padding: 1rem 5%; /* Espaco interno da navbar: altura e laterais */
+    background: #de0707; /* Altere aqui a cor vermelha da barra */
     /* cor principal */
 
-    color: white;
+    color: white; /* Cor do texto da navbar */
 
-    position: fixed;
-    width: 100%;
-    top: 0;
+    position: fixed; /* Mantem a navbar fixa no topo ao rolar a pagina */
+    width: 100%; /* Faz a navbar ocupar toda a largura da tela */
+    top: 0; /* Gruda a navbar no topo */
 
-    z-index: 1000;
+    z-index: 1000; /* Garante que a navbar fique acima do conteudo */
 }
 
 /* Logo */
 #navbar .logo {
-    font-size: 1.6rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
+    font-size: 1.6rem; /* Tamanho do texto da logo */
+    font-weight: 800; /* Peso/negrito da logo */
+    text-transform: uppercase; /* Deixa a logo em letras maiusculas */
+    letter-spacing: 1px; /* Espaco entre letras da logo */
+    text-align: center; /* Centraliza o texto da logo */
 
 }
 
 /* Lista de navegação */
 #navbar ul {
-    display: flex;
-    list-style: none;
+    display: flex; /* Deixa os links do menu em linha */
+    list-style: none; /* Remove as bolinhas da lista */
 }
 
 /* Links */
 #navbar ul li a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-    transition: 0.3s;
+    color: white; /* Cor dos links do menu */
+    text-decoration: none; /* Remove sublinhado dos links */
+    margin-left: 20px; /* Distancia entre os links */
+    font-weight: bold; /* Deixa os links em negrito */
+    transition: 0.3s; /* Suaviza mudanca de cor no hover */
 }
 
 /* Hover */
 #navbar ul li a:hover {
-    color: #ff1100;
+    color: #ff1100; /* Cor do link quando passa o mouse */
 }
 
 
@@ -88,36 +105,36 @@ body {
 @media (max-width: 768px) {
 
     #navbar {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: row; /* Mantem logo e botao/menu na mesma linha no mobile */
+        justify-content: space-between; /* Separa logo e menu no mobile */
     }
 
     /* Menu escondido */
     #navbar ul {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
+        position: absolute; /* Permite abrir o menu abaixo da navbar */
+        top: 70px; /* Distancia do menu em relacao ao topo */
+        left: 0; /* Alinha o menu ao lado esquerdo da tela */
+        width: 100%; /* Menu mobile ocupa toda a largura */
 
-        background: #de0707;
+        background: #de0707; /* Cor de fundo do menu aberto no mobile */
 
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Links ficam um abaixo do outro */
+        align-items: center; /* Centraliza links no mobile */
 
-        max-height: 0;
-        overflow: hidden;
+        max-height: 0; /* Menu fechado */
+        overflow: hidden; /* Esconde links quando o menu esta fechado */
 
-        transition: 0.3s;
+        transition: 0.3s; /* Suaviza abrir/fechar menu */
     }
 
     /* Menu aberto via JS */
     #navbar ul.active {
-        max-height: 300px;
-        padding: 20px 0;
+        max-height: 300px; /* Altura maxima do menu aberto */
+        padding: 20px 0; /* Espaco interno vertical do menu aberto */
     }
 
     #navbar ul li {
-        margin: 10px 0;
+        margin: 10px 0; /* Distancia vertical entre links no mobile */
     }
 }
 
@@ -127,66 +144,66 @@ body {
 /* ===================================================== */
 
 header {
-    height: 100vh;
-    width: 100%;
+    height: 100vh; /* Altura do hero: 100% da tela inicial */
+    width: 100%; /* Hero ocupa toda a largura */
 
     /* Overlay + imagem */
-    background:
+    background: /* Imagem de fundo do hero com camada escura por cima */
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url('https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    display: flex; /* Permite centralizar o conteudo do hero */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza os textos */
 
-    color: white;
+    color: white; /* Cor dos textos no hero */
 
     /* Parallax (DESATIVADO no mobile depois) */
-    background-attachment: fixed;
+    background-attachment: fixed; /* Efeito parallax no desktop */
 }
 
 /* Título */
 .hero-text h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem; /* Tamanho do titulo principal */
+    margin-bottom: 10px; /* Espaco abaixo do titulo */
 }
 
 /* Foto */
 .hero-text .foto-perfil {
-    width: 250px;
-    height: 250px;
+    width: 250px; /* Largura da foto no desktop */
+    height: 250px; /* Altura da foto no desktop */
 
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 50%; /* Deixa a foto redonda */
+    object-fit: cover; /* Corta a imagem sem distorcer */
 
-    margin: 0 auto 10px;
+    margin: 0 auto 10px; /* Centraliza a foto e cria espaco abaixo */
 
-    border: 4px solid #ffffff;
+    border: 4px solid #ffffff; /* Borda branca da foto */
 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra da foto */
 }
 
 /* Botão */
 .hero-text button {
-    margin-top: 20px;
-    padding: 10px 25px;
+    margin-top: 20px; /* Distancia entre o texto e o botao */
+    padding: 10px 25px; /* Tamanho interno do botao */
 
-    background-color: #ff1100;
-    border: none;
+    background-color: #ff1100; /* Cor do botao */
+    border: none; /* Remove borda padrao */
 
-    color: white;
-    font-weight: bold;
+    color: white; /* Cor do texto do botao */
+    font-weight: bold; /* Texto do botao em negrito */
 
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 4px; /* Arredondamento do botao */
+    cursor: pointer; /* Mostra cursor de clique */
 
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Suaviza hover do botao */
 }
 
 .hero-text button:hover {
-    background-color: #5b5959;
-    transform: translateY(-3px);
+    background-color: #5b5959; /* Cor do botao ao passar o mouse */
+    transform: translateY(-3px); /* Move levemente para cima no hover */
 }
 
 
@@ -195,8 +212,8 @@ header {
 /* ===================================================== */
 
 section {
-    padding: 100px 10% 60px;
-    text-align: center;
+    padding: var(--section-padding-desktop); /* Ajuste em :root para mudar o espaco das secoes no desktop */
+    text-align: center; /* Centraliza titulos e textos das secoes */
 }
 
 
@@ -205,49 +222,49 @@ section {
 /* ===================================================== */
 
 .skills {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
+    display: flex; /* Coloca os cards de habilidades lado a lado */
+    justify-content: center; /* Centraliza os cards */
+    gap: 25px; /* Distancia entre cards de habilidades */
 
-    margin-top: 40px;
-    flex-wrap: wrap;
+    margin-top: var(--skills-margin-top); /* Distancia entre texto/titulo e cards de habilidades */
+    flex-wrap: wrap; /* Permite quebrar cards para outra linha quando faltar espaco */
 }
 
 .skill-card {
-    background: white;
-    padding: 30px;
+    background: white; /* Fundo dos cards de habilidades */
+    padding: 30px; /* Espaco interno dos cards */
 
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Arredondamento dos cards */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra dos cards */
 
-    width: 280px;
-    transition: 0.3s;
+    width: 280px; /* Largura fixa dos cards no desktop */
+    transition: 0.3s; /* Suaviza animacao no hover */
 }
 
 .skill-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Move o card para cima no hover */
 }
 
 /* Ícones */
 .icon-box {
-    width: 100px;
-    height: 100px;
+    width: 100px; /* Largura do circulo do icone */
+    height: 100px; /* Altura do circulo do icone */
 
-    background-color: #f8f9fa;
-    border-radius: 50%;
+    background-color: #f8f9fa; /* Fundo do circulo do icone */
+    border-radius: 50%; /* Deixa o fundo do icone redondo */
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* Centraliza o icone dentro do circulo */
+    align-items: center; /* Centraliza verticalmente o icone */
+    justify-content: center; /* Centraliza horizontalmente o icone */
 
-    margin: 0 auto 20px;
+    margin: 0 auto 20px; /* Centraliza o circulo e cria espaco abaixo */
 
-    border: 2px solid #eee;
+    border: 2px solid #eee; /* Borda suave do circulo */
 }
 
 .icone-grande {
-    font-size: 50px !important;
-    color: #2c3e50;
+    font-size: 50px !important; /* Tamanho dos icones */
+    color: #2c3e50; /* Cor padrao dos icones */
 }
 
 
@@ -256,95 +273,95 @@ section {
 /* ===================================================== */
 
 .projeto-grid {
-    display: grid;
-    padding: 30px 0;
+    display: grid; /* Cria a grade de cards de projetos */
+    padding: var(--projeto-grid-padding); /* Respiro interno do grid de projetos */
     /* Grelha flexível base */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas: minimo 300px por card */
+    gap: 30px; /* Distancia entre os cards de projeto */
+    width: 100%; /* Ocupa toda a largura disponivel da secao */
 }
 
 /* 🔧 CORREÇÃO: Força 3 colunas exatas apenas em ecrãs grandes (Desktop) */
 @media (min-width: 1024px) {
     .projeto-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Mantem 3 colunas em telas grandes */
     }
 }
 
 .projeto-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    background: #fff; /* Fundo dos cards de projeto */
+    border-radius: 12px; /* Arredondamento dos cards */
+    overflow: hidden; /* Impede imagem de sair do card arredondado */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Sombra dos cards */
+    transition: transform 0.3s ease; /* Suaviza animacao no hover */
 
     /* REMOVA qualquer height fixo se existir e use min-height */
-    min-height: 365px;
+    min-height: 365px; /* Altura minima dos cards de projeto */
     /* Isso garante que o card tenha uma altura mínima robusta */
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Organiza imagem e texto dentro do card */
+    flex-direction: column; /* Coloca capa acima das informacoes */
 }
 
 .projeto-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px); /* Move o card para cima no hover */
 }
 
 .projeto-capa {
-    height: 200px;
-    overflow: hidden;
+    height: 200px; /* Altura da imagem/capa do projeto */
+    overflow: hidden; /* Corta excesso da imagem */
 }
 
 .projeto-capa img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    height: 100%; /* Imagem ocupa toda a altura da capa */
+    object-fit: cover; /* Corta imagem sem distorcer */
 }
 
 #projetos {
-    padding-top: 120px;
-    /* aumenta espaço acima */
+    padding-top: var(--projetos-padding-top-desktop); /* Espaco acima da secao de projetos no desktop */
+    /* Mantém respiro entre as seções sem alongar demais a página */
 }
 
 .projeto-info h3 {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Espaco abaixo do titulo do projeto */
     /* espaço abaixo do título */
 }
 
 .projeto-info {
-    padding: 25px 17px;
-    text-align: center;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    padding: 25px 17px; /* Espaco interno da area de texto do projeto */
+    text-align: center; /* Centraliza texto do projeto */
+    flex-grow: 1; /* Faz o texto ocupar o espaco restante do card */
+    display: flex; /* Permite alinhar titulo, texto e tag */
+    flex-direction: column; /* Empilha titulo, texto e tag */
+    justify-content: space-between; /* Distribui o conteudo verticalmente */
+    align-items: center; /* Centraliza a tag e os textos */
     /* 🔧 CORREÇÃO: Impede o botão vermelho de esticar */
 }
 
 .projeto-info p {
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    margin-bottom: 20px; /* Espaco abaixo da descricao do projeto */
+    font-size: 0.95rem; /* Tamanho da descricao */
+    line-height: 1.5; /* Altura entre linhas da descricao */
 }
 
 .tag {
     /* Correção da etiqueta (tag) para evitar cortes no texto */
-    display: inline-block;
-    background: #ff1100;
-    color: white;
-    padding: 8px 20px;
+    display: inline-block; /* Permite definir padding na tag */
+    background: #ff1100; /* Cor de fundo da tag */
+    color: white; /* Cor do texto da tag */
+    padding: 8px 20px; /* Espaco interno da tag */
     /* Aumentamos o espaço interno (respiro) */
-    border-radius: 10px;
+    border-radius: 10px; /* Arredondamento da tag */
     /* Visual mais quadrado e robusto, evita cortar as letras nas pontas */
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    margin-top: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1;
+    font-family: 'Montserrat', sans-serif; /* Fonte da tag */
+    font-size: 0.95rem; /* Tamanho do texto da tag */
+    font-weight: 700; /* Negrito da tag */
+    margin-top: 10px; /* Espaco acima da tag */
+    text-transform: uppercase; /* Texto da tag em maiusculas */
+    letter-spacing: 1px; /* Espaco entre letras da tag */
+    line-height: 1; /* Centraliza melhor o texto verticalmente */
     /* Garante que o texto fique centralizado verticalmente */
-    border: none;
+    border: none; /* Remove borda da tag */
 
 }
 
@@ -353,57 +370,57 @@ section {
 /* 🔹 CONTATO */
 /* ===================================================== */
 #contato p {
-    margin-bottom: 50px;
+    margin-bottom: var(--contato-text-margin-bottom); /* Distancia entre a frase de contato e os cards */
     /* Afasta a frase "Interessado em Parcerias..." dos cards */
-    font-size: 1.1rem;
-    color: #555;
+    font-size: 1.1rem; /* Tamanho da frase de contato */
+    color: #555; /* Cor da frase de contato */
 }
 
 .contato-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: flex; /* Organiza os cards de contato lado a lado */
+    justify-content: center; /* Centraliza os cards de contato */
+    gap: 30px; /* Distancia entre os cards de contato */
+    flex-wrap: wrap; /* Permite quebrar cards no mobile */
 }
 
 .contato-card {
-    background: #ffffff;
-    width: 280px;
+    background: #ffffff; /* Fundo dos cards de contato */
+    width: 280px; /* Largura dos cards de contato no desktop */
 
-    padding: 30px 20px;
-    border-radius: 15px;
+    padding: 30px 20px; /* Espaco interno dos cards de contato */
+    border-radius: 15px; /* Arredondamento dos cards de contato */
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra dos cards de contato */
 
-    text-align: center;
-    transition: 0.3s;
+    text-align: center; /* Centraliza conteudo do card */
+    transition: 0.3s; /* Suaviza animacao no hover */
 }
 
 .contato-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Move o card de contato para cima no hover */
 }
 
 /* Links */
 .contato-card a {
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none; /* Remove sublinhado do link */
+    color: inherit; /* Usa a cor do card em vez da cor padrao do link */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; /* Organiza icone e texto */
+    flex-direction: column; /* Coloca icone acima do texto */
+    align-items: center; /* Centraliza icone e texto */
 }
 
 /* Hover cores */
 .contato-card:hover .fa-linkedin {
-    color: #0077b5;
+    color: #0077b5; /* Cor do icone LinkedIn no hover */
 }
 
 .contato-card:hover .fa-whatsapp {
-    color: #25d366;
+    color: #25d366; /* Cor do icone WhatsApp no hover */
 }
 
 .contato-card:hover .fa-envelope {
-    color: #ff1100;
+    color: #ff1100; /* Cor do icone de email no hover */
 }
 
 
@@ -412,7 +429,7 @@ section {
 /* ===================================================== */
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fonte principal dos textos comuns */
 }
 
 h1,
@@ -420,8 +437,8 @@ h2,
 h3,
 .logo,
 #navbar ul li a {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-family: 'Montserrat', sans-serif; /* Fonte dos titulos e menu */
+    font-weight: 700; /* Peso dos titulos e menu */
 }
 
 
@@ -430,10 +447,10 @@ h3,
 /* ===================================================== */
 
 footer {
-    background: #2c3e50;
-    color: white;
-    padding: 40px;
-    text-align: center;
+    background: #2c3e50; /* Cor de fundo do rodape */
+    color: white; /* Cor do texto do rodape */
+    padding: 40px; /* Espaco interno do rodape */
+    text-align: center; /* Centraliza texto do rodape */
 }
 
 
@@ -446,72 +463,73 @@ footer {
 
     /* Hero */
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Tamanho do titulo principal no mobile */
     }
 
     .hero-text p {
-        font-size: 0.9rem;
-        padding: 0 10px;
+        font-size: 0.9rem; /* Tamanho do texto do hero no mobile */
+        padding: 0 10px; /* Respiro lateral do texto do hero no mobile */
     }
 
     .hero-text .foto-perfil {
-        width: 150px;
-        height: 150px;
+        width: 150px; /* Largura da foto no mobile */
+        height: 150px; /* Altura da foto no mobile */
     }
 
     /* Corrige parallax */
     header {
-        background-attachment: scroll;
+        background-attachment: scroll; /* Desativa parallax para evitar problemas no mobile */
     }
 
     /* Espaçamento */
     section {
-        padding: 80px 5% 40px;
-        overflow: visible;
+        padding: var(--section-padding-mobile); /* Ajuste em :root para mudar espaco geral no mobile */
+        overflow: visible; /* Permite que conteudos internos aparecam sem cortes */
 
     }
 
     /* Ajuste para a seção Sobre Mim */
     #sobre {
-        padding: 100px 15% 80px;
-        /* Aumentamos o respiro lateral para 15% */
-        text-align: center;
-        max-width: 600px;
+        padding: var(--sobre-padding-mobile); /* Ajuste em :root para mudar espaco da secao Sobre no mobile */
+        /* Mantém boa leitura no mobile sem excesso de espaço */
+        text-align: center; /* Centraliza textos da secao Sobre */
+        max-width: 600px; /* Limita largura do texto no mobile */
         /* Limita a largura para o texto não ficar esticado demais */
-        margin: 0 auto;
+        margin: 0 auto; /* Centraliza a secao Sobre */
         /* Centraliza a seção inteira na tela */
     }
 
     /* Espaçamento específico para os parágrafos do Sobre Mim */
     #sobre p {
-        margin-top: 30px;
+        margin-top: 18px; /* Distancia entre titulo e paragrafo no Sobre */
         /* Distância entre o título "Sobre Mim" e o texto */
-        margin-bottom: 20px;
+        margin-bottom: 14px; /* Distancia entre paragrafos do Sobre */
         /* Distância entre os parágrafos */
-        line-height: 1.8;
+        line-height: 1.8; /* Altura entre linhas do texto Sobre */
         /* Melhora a legibilidade do texto técnico */
         /*text-align: justify;*/
         /* Alinhamento justificado para parecer um documento de engenharia */
-        font-size: 1rem;
+        font-size: 1rem; /* Tamanho do texto Sobre no mobile */
     }
 
     #projetos {
-        padding-bottom: 80px;
+        padding-top: var(--projetos-padding-top-mobile); /* Espaco acima dos projetos no mobile */
+        padding-bottom: var(--projetos-padding-bottom-mobile); /* Espaco abaixo dos projetos no mobile */
     }
 
     /* Cards fluidos */
     .skill-card,
     .contato-card {
-        width: 100%;
-        max-width: 320px;
+        width: 100%; /* Cards ocupam largura disponivel no mobile */
+        max-width: 320px; /* Limite para os cards nao ficarem largos demais */
     }
 
     /* Botão menor */
     .hero-text button {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-        max-width: 200px;
-        width: 100%;
+        padding: 8px 16px; /* Tamanho interno do botao no mobile */
+        font-size: 0.85rem; /* Tamanho do texto do botao no mobile */
+        max-width: 200px; /* Limita largura do botao no mobile */
+        width: 100%; /* Permite botao ocupar a largura disponivel ate o max-width */
     }
 }
 
@@ -520,14 +538,14 @@ footer {
 @media (max-width: 480px) {
 
     .hero-text h1 {
-        font-size: 1.6rem;
+        font-size: 1.6rem; /* Titulo ainda menor em telas muito pequenas */
     }
 
     .logo {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Reduz logo em telas muito pequenas */
     }
 
     .hero-text button {
-        width: 100%;
+        width: 100%; /* Botao ocupa toda a largura permitida em telas pequenas */
     }
 }
